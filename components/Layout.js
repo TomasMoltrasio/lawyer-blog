@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children }) {
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen py-2">
+    <div className="flex flex-col items-center justify-between min-h-screen">
       <Header />
       <main className="flex flex-col h-max w-screen">{children}</main>
       <Footer />

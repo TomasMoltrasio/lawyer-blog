@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Link, Text } from "@nextui-org/react";
+import { Navbar, Text, Link } from "@nextui-org/react";
 import { AcmeLogo } from "../public/AcmeLogo.js";
 import { useRouter } from "next/router";
 
@@ -20,7 +20,7 @@ export default function Header() {
       >
         <Link
           className="text-black hover:scale-125 hover:text-lime-900"
-          href="/"
+          onClick={() => router.push("/")}
         >
           <AcmeLogo />
           <Text className="cursor-pointer" b color="inherit" hideIn="xs">
@@ -35,28 +35,28 @@ export default function Header() {
         variant="highlight"
       >
         <Navbar.Link
-          href="/"
+          onClick={() => router.push("/")}
           isActive={router.pathname === "/"}
           className="hover:scale-110"
         >
           Inicio
         </Navbar.Link>
         <Navbar.Link
-          href="/publicaciones"
+          onClick={() => router.push("/publicaciones")}
           isActive={router.pathname === "/publicaciones"}
           className="hover:scale-110"
         >
           Publicaciones
         </Navbar.Link>
         <Navbar.Link
-          href="/blog"
+          onClick={() => router.push("/blog")}
           isActive={router.pathname === "/blog"}
           className="hover:scale-110"
         >
           Blog
         </Navbar.Link>
         <Navbar.Link
-          href="/contacto"
+          onClick={() => router.push("/contacto")}
           isActive={router.pathname === "/contacto"}
           className="hover:scale-110"
         >
@@ -75,7 +75,7 @@ export default function Header() {
               css={{
                 minWidth: "100%",
               }}
-              href={collapseItemsLinks[index]}
+              onClick={() => router.push(collapseItemsLinks[index])}
             >
               {item}
             </Link>
