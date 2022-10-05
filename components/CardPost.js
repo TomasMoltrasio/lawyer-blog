@@ -1,9 +1,6 @@
-import { Card, Col, Row, Text } from "@nextui-org/react";
-import { useRouter } from "next/router";
+import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-export default function CardLatestPost() {
-  const router = useRouter();
-
+export default function CardPost({ post }) {
   const images = [
     "images-fondo/libro-2.jpg",
     "images-fondo/libro-3.jpg",
@@ -17,19 +14,21 @@ export default function CardLatestPost() {
   ];
 
   const toPost = () => {
-    router.push("/");
+    window.open(url, "_blank");
   };
 
+  const { title, publisher, url } = post;
+
   return (
-    <div
-      onClick={toPost}
-      className="m-2 cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-300"
-    >
-      <Card css={{ w: "100%", h: "200px" }}>
+    <div className="p-4 cursor-pointer hover:scale-110" onClick={toPost}>
+      <Card css={{ w: "100%", h: "300px" }}>
         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
           <Col>
-            <Text size={20} weight="bold" transform="uppercase" color="#FFF">
-              Nuevo
+            <Text size={20} weight="bold" transform="uppercase" color="white">
+              {title}
+            </Text>
+            <Text h3 color="white">
+              {`Publicado en ${publisher}`}
             </Text>
           </Col>
         </Card.Header>
@@ -39,7 +38,7 @@ export default function CardLatestPost() {
             width="100%"
             height="100%"
             objectFit="cover"
-            alt="Imagen de libros"
+            alt="Card example background"
             className="brightness-50"
           />
         </Card.Body>
@@ -54,13 +53,27 @@ export default function CardLatestPost() {
           }}
         >
           <Row>
-            <Text
-              className="text-ellipsis text-white "
-              weight="semibold"
-              size={20}
-            >
-              Mi pensamiento sobre la constitución
-            </Text>
+            <Col>
+              <Row justify="flex-end">
+                <Button
+                  auto
+                  rounded
+                  color="success"
+                  onClick={() => {
+                    window.open(url, "_blank");
+                  }}
+                >
+                  <Text
+                    css={{ color: "inherit" }}
+                    size={12}
+                    weight="bold"
+                    transform="uppercase"
+                  >
+                    Ver más
+                  </Text>
+                </Button>
+              </Row>
+            </Col>
           </Row>
         </Card.Footer>
       </Card>
