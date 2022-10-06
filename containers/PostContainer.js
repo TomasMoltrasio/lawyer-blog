@@ -6,7 +6,7 @@ export default function PostContainer({ posts }) {
   const [post, setPost] = useState(posts);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const postsPerPage = 4;
+  const postsPerPage = 8;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = post.slice(indexOfFirstPost, indexOfLastPost);
@@ -16,13 +16,8 @@ export default function PostContainer({ posts }) {
       <Text
         h2
         size={30}
-        showIn="xs"
-        className="text-center
-        text-9xl
-        font-bold
-        text-gray-900
-        dark:text-gray-100
-        mb-4"
+        className={"text-center text-6xl font-bold text-gray-800"}
+        showIn="sm"
       >
         Publicaciones
       </Text>
@@ -30,10 +25,9 @@ export default function PostContainer({ posts }) {
         h2
         className=" 
         text-center
-        text-4xl
+        text-xl
         font-bold
         text-gray-900
-        dark:text-gray-100
         mb-4
         mt-4
         

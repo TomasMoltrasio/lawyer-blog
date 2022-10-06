@@ -1,7 +1,8 @@
 import React from "react";
-import { Navbar, Text, Link } from "@nextui-org/react";
+import { Navbar, Text, Link, Modal } from "@nextui-org/react";
 import { AcmeLogo } from "../public/AcmeLogo.js";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Header() {
   const collapseItems = ["Inicio", "Publicaciones", "Blog", "Contacto"];
@@ -9,7 +10,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <Navbar isBordered variant="static">
+    <Navbar className="w-screen" isBordered variant="static">
       <Navbar.Toggle showIn="xs" />
       <Navbar.Brand
         css={{

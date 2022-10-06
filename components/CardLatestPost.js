@@ -1,8 +1,10 @@
 import { Card, Col, Row, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
-export default function CardLatestPost() {
+export default function CardLatestPost({ posts }) {
   const router = useRouter();
+
+  const { title, id } = posts;
 
   const images = [
     "images-fondo/libro-2.jpg",
@@ -17,7 +19,7 @@ export default function CardLatestPost() {
   ];
 
   const toPost = () => {
-    router.push("/");
+    router.push("/blog/" + id);
   };
 
   return (
@@ -59,7 +61,7 @@ export default function CardLatestPost() {
               weight="semibold"
               size={20}
             >
-              Mi pensamiento sobre la constitución
+              {title}
             </Text>
           </Row>
         </Card.Footer>

@@ -3,7 +3,7 @@ import AboutMe from "../components/AboutMe";
 import LatestPost from "components/LatestPost";
 import { Grid } from "@nextui-org/react";
 
-export default function HomeContainer() {
+export default function HomeContainer({ posts }) {
   return (
     <>
       <div>
@@ -14,7 +14,7 @@ export default function HomeContainer() {
           <AboutMe />
         </Grid>
         <Grid xs>
-          <LatestPost />
+          <LatestPost posts={posts} />
         </Grid>
       </Grid.Container>
     </>

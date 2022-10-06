@@ -1,15 +1,29 @@
 import Head from "next/head";
+import BlogContainer from "containers/BlogContainer";
+import { getAllPost } from "services/post";
 
-export default function Blog() {
+export default function Blog({ posts }) {
   return (
     <>
       <Head>
         <title>Blog</title>
       </Head>
 
-      <div>
-        <h1 className="text-2xl font-bold text-center">Blog</h1>
-      </div>
+      <BlogContainer posts={posts} />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await getAllPost().then((res) => res);
+  if (res === undefined) {
+    res = [];
+  }
+  const data = res.reverse();
+
+  return {
+    props: {
+      posts: data,
+    },
+  };
 }

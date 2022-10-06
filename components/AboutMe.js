@@ -12,7 +12,7 @@ export default function AboutMe() {
         }
         expanded={true}
       >
-        <Text p weight="semibold" className="first-letter:text-2xl">
+        <Text h1 weight="semibold" className="first-letter:text-2xl">
           Abogado egresado de la Universidad Nacional de La Plata (2001), donde
           obtuvo los premios La Ley, Rubinzal-Culzoni, y la Distinción Joaquín
           V. González, otorgada por la Municipalidad de La Plata a los egresados
@@ -22,7 +22,7 @@ export default function AboutMe() {
           humanos en Latinoamérica fue calificada “sobresaliente” (A+) por su
           director de tesis, el profesor Marc Tushnet.
         </Text>
-        <Text p weight="semibold" className="first-letter:text-2xl">
+        <Text h1 weight="semibold" className="first-letter:text-2xl">
           {" "}
           También ha realizado cursos de posgrado en derecho en la Universidad
           de Yale, en la Academia de Derecho Internacional de La Haya, en el
@@ -33,7 +33,7 @@ export default function AboutMe() {
           Aires, con tesis sobre las “cuestiones políticas no justiciables”,
           bajo la dirección del profesor Alberto Bianchi.
         </Text>
-        <Text p weight="semibold" className="first-letter:text-2xl">
+        <Text h1 weight="semibold" className="first-letter:text-2xl">
           {" "}
           Es coautor de varios libros, además de haber escrito artículos y
           comentarios en revistas especializadas, y colaborado en varias obras
@@ -46,7 +46,7 @@ export default function AboutMe() {
           habilitan para el ejercicio de la abogacía ante los tribunales del
           Estado de Nueva York.
         </Text>
-        <Text p weight="semibold" className="first-letter:text-2xl">
+        <Text h1 weight="semibold" className="first-letter:text-2xl">
           {" "}
           Ha sido abogado asociado del Estudio Jurídico Arslanian Beraldi &
           Kaminker (2004/2012) y socio de Arslanian & Asociados (2012 hasta el

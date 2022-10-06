@@ -15,10 +15,24 @@ export default function Contacto() {
         className="m-0 p-0"
       >
         <Grid xs={12} md={12} lg={12} className="flex flex-col items-center">
-          <Text h2 size={30} className="text-center">
+          <Text
+            h2
+            size={30}
+            className={"text-center text-6xl font-bold text-gray-800"}
+            showIn="sm"
+          >
             Contacto
           </Text>
-          <Text p className="text-center">
+          <Text
+            h2
+            className=" 
+        text-center
+        text-xl
+        font-bold
+        text-gray-900
+        mb-4
+        mt-4"
+          >
             Si querés contactar conmigo, podés hacerlo a través de cualquiera de
             los siguientes medios:
           </Text>
