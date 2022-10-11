@@ -1,6 +1,8 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import { useRouter } from "next/router";
 
 export default function CardPost({ post }) {
+  const router = useRouter();
   const images = [
     "images-fondo/libro-2.jpg",
     "images-fondo/libro-3.jpg",
@@ -55,14 +57,7 @@ export default function CardPost({ post }) {
           <Row>
             <Col>
               <Row justify="flex-end">
-                <Button
-                  auto
-                  rounded
-                  color="success"
-                  onClick={() => {
-                    window.open(url, "_blank");
-                  }}
-                >
+                <Button auto rounded color="success" onClick={toPost}>
                   <Text
                     css={{ color: "inherit" }}
                     size={12}

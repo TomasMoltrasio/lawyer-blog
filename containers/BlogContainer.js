@@ -8,7 +8,7 @@ export default function BlogContainer({ posts }) {
   const [post, setPost] = useState(posts);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const postsPerPage = 8;
+  const postsPerPage = 2;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
@@ -41,7 +41,7 @@ export default function BlogContainer({ posts }) {
         compartimos conocimiento y experiencias.
       </Text>
       <Button
-        className="relative z-10 w-1/2 max-w-md hover:scale-110 transform transition duration-500 ease-in-out"
+        className="relative z-10 w-1/2 max-w-md hover:scale-105 transform transition duration-500 ease-in-out"
         color="success"
         flat
         auto
@@ -56,7 +56,7 @@ export default function BlogContainer({ posts }) {
 
       <Grid.Container gap={2} className="mt-8" justify="center">
         {currentPosts.map((post) => (
-          <Grid xs={6} sm={6} md={4} lg={3} key={`blog-id-${post.id}`}>
+          <Grid xs={12} sm={12} md={12} lg={12} key={`blog-id-${post.id}`}>
             <CardBlog post={post} />
           </Grid>
         ))}

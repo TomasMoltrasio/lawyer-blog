@@ -2,7 +2,7 @@ import { Card, Text, Button, Row, Col } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 export default function CardBlog({ post }) {
-  const { title, description, content, id, date } = post;
+  const { title, description, id, date } = post;
   const images = [
     "images-fondo/libro-2.jpg",
     "images-fondo/libro-3.jpg",
@@ -23,9 +23,9 @@ export default function CardBlog({ post }) {
   return (
     <div
       onClick={toBlog}
-      className="cursor-pointer hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+      className="cursor-pointer hover:-translate-y-1 hover:scale-105 transition-all duration-300 w-11/12"
     >
-      <Card css={{ w: "100%", h: "400px" }}>
+      <Card className="h-52 mx-10">
         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
           <Col>
             <Text

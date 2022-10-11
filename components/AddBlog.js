@@ -1,4 +1,4 @@
-import { Container, Button, Input, Textarea, Spacer } from "@nextui-org/react";
+import { Container, Button } from "@nextui-org/react";
 import { useState } from "react";
 import { createPost } from "services/post";
 import Swal from "sweetalert2";
@@ -36,32 +36,32 @@ export default function AddBlog({ closeHandler }) {
       <h1 className="text-4xl font-bold text-gray-900 mb-4">Agregar Blog</h1>
       <div className="flex flex-col items-center justify-center w-full h-max p-12">
         <form className="flex flex-col items-center justify-center h-max w-full max-w-md p-6 space-y-4 rounded-md">
-          <Input
-            clearable
-            underlined
-            labelPlaceholder="Título"
+          <input
+            type="text"
+            placeholder="Título"
+            className="w-full p-2 border-2 border-slate-900 rounded-md"
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <Spacer y={1} />
-          <Input
-            clearable
-            underlined
-            labelPlaceholder="Descripción"
+          <input
+            type="text"
+            placeholder="Descripción"
+            className="w-full p-2 border-2 border-slate-900 rounded-md"
+            value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <Spacer y={1} />
-          <Textarea
-            clearable
-            underlined
-            labelPlaceholder="Contenido"
+          <textarea
+            type="text"
+            placeholder="Contenido"
+            className="w-full p-2 border-2 border-slate-900 rounded-md"
+            value={content}
             onChange={(e) => setContent(e.target.value)}
           />
-          <Spacer y={1} />
           <Button
             color={"suceess"}
             bordered
             borderWeight={0.5}
-            className="w-full text-black mt-8"
+            className="w-full text-black mt-8 text-xl font-bold hover:scale-110 hover:text-lime-900 hover:bg-white"
             onPress={submitHandler}
           >
             Agregar

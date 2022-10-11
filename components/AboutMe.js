@@ -4,7 +4,7 @@ export default function AboutMe() {
   return (
     <Container className="mt-2">
       <Collapse
-        className="border-2 border-lime-500 bg-gradient-to-b from-white to-lime-100 rounded-lg p-4"
+        className="border-2 border-emerald-500 bg-gradient-to-b from-white to-emerald-100 rounded-lg p-4"
         title={
           <Text h3 weight="semibold" size={30} className="text-black">
             ¿Quién soy?

@@ -5,7 +5,6 @@ export default function CardLatestPost({ posts }) {
   const router = useRouter();
 
   const { title, id } = posts;
-
   const images = [
     "images-fondo/libro-2.jpg",
     "images-fondo/libro-3.jpg",
@@ -56,11 +55,7 @@ export default function CardLatestPost({ posts }) {
           }}
         >
           <Row>
-            <Text
-              className="text-ellipsis text-white "
-              weight="semibold"
-              size={20}
-            >
+            <Text className="text-white" weight="semibold" size={20}>
               {title}
             </Text>
           </Row>

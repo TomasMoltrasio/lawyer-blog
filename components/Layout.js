@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen w-screen">
       <Header />
-      <main className="flex flex-col h-max w-screen">{children}</main>
+      <main className="flex flex-col h-max w-full">{children}</main>
       <Footer />
     </div>
   );

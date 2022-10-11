@@ -1,8 +1,7 @@
 import React from "react";
-import { Navbar, Text, Link, Modal } from "@nextui-org/react";
-import { AcmeLogo } from "../public/AcmeLogo.js";
+import { Navbar, Text, Link } from "@nextui-org/react";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { GoLaw } from "react-icons/go";
 
 export default function Header() {
   const collapseItems = ["Inicio", "Publicaciones", "Blog", "Contacto"];
@@ -10,7 +9,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <Navbar className="w-screen" isBordered variant="static">
+    <Navbar className="w-screen" as="nav" variant="static" maxWidth="fluid">
       <Navbar.Toggle showIn="xs" />
       <Navbar.Brand
         css={{
@@ -20,20 +19,28 @@ export default function Header() {
         }}
       >
         <Link
-          className="text-black hover:scale-125 hover:text-lime-900"
+          className="text-black hover:scale-105 hover:text-emerald-900"
           onClick={() => router.push("/")}
         >
-          <AcmeLogo />
-          <Text className="cursor-pointer" b color="inherit" hideIn="xs">
+          <GoLaw className="text-3xl mr-2" />
+          <Text
+            className="cursor-pointer text-xl"
+            b
+            color="inherit"
+            hideIn="sm"
+          >
             Germán González Campaña
           </Text>
         </Link>
       </Navbar.Brand>
       <Navbar.Content
-        enableCursorHighlight
         activeColor="success"
         hideIn="xs"
-        variant="highlight"
+        variant="underline-rounded"
+        css={{
+          fontSize: "1.3rem",
+          marginLeft: "auto",
+        }}
       >
         <Navbar.Link
           onClick={() => router.push("/")}
