@@ -22,6 +22,17 @@ const getPost = async (id) => {
   }
 };
 
+const getPostByTitle = async (title) => {
+  try {
+    const res = await fetch(endPoints.posts.getPostByTitle(title));
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const createPost = async (post) => {
   try {
     const res = await fetch(endPoints.posts.createPost(), {
@@ -69,4 +80,11 @@ const deletePost = async (id) => {
   }
 };
 
-export { getAllPost, getPost, createPost, updatePost, deletePost };
+export {
+  getAllPost,
+  getPost,
+  createPost,
+  updatePost,
+  deletePost,
+  getPostByTitle,
+};

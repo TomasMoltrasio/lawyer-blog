@@ -1,27 +1,65 @@
-import Link from "next/link";
+import { Image, Grid } from "@nextui-org/react";
 
 export default function Footer() {
   return (
-    <footer className="p-4 bg-emerald-900/50 h-10 w-full mt-10 rounded-tr-lg rounded-tl-lg shadow md:flex md:items-center md:justify-between md:p-6">
-      <span className="text-sm text-black sm:text-center">
-        © 2022 Germán González Campaña. Todos los derechos reservados.
-      </span>
-      <ul className="flex flex-row justify-center items-center text-sm text-black sm:mt-0">
-        <li>
-          <a
-            href="https://github.com/TomasMoltrasio"
-            className="hover:underline mr-4"
-            target={"_blank"}
-          >
-            Desarollador
+    <footer className="bg-emerald-900/50 h-max w-full mt-10 shadow md:flex md:items-center md:justify-between">
+      <Grid.Container gap={2} justify="space-between" className="w-full">
+        <Grid xs={4} md={4} lg={4} className="w-full">
+          <span className="text-xs font-semibold text-black md:text-sm lg:text-sm xl:text-sm">
+            © 2022 Germán González Campaña. Todos los derechos reservados.
+          </span>
+        </Grid>
+        <Grid xs={4} md={4} lg={4} justify="center" className="w-full">
+          <span className="text-xs font-semibold text-black md:text-sm lg:text-sm xl:text-sm">
+            Developed by{" "}
+            <a
+              href="https://github.com/TomasMoltrasio"
+              target="_blank"
+              className="text-base"
+            >
+              Tomás Moltrasio
+            </a>
+          </span>
+        </Grid>
+        <Grid xs={4} md={4} lg={4} className="w-full" justify="flex-end">
+          <a href="https://www.linkedin.com/in/germ%C3%A1n-gonz%C3%A1lez-campa%C3%B1a-4b1b3b1b9/">
+            <Image
+              src="/in-logo.png"
+              alt="Linkedin"
+              width={30}
+              height={30}
+              className="rounded-full ml-4 hover:scale-110"
+            />
           </a>
-        </li>
-        <li>
-          <Link href="/contacto">
-            <a className="hover:underline mr-4">Contacto</a>
-          </Link>
-        </li>
-      </ul>
+          <a href="tel:+5491165681418">
+            <Image
+              src="/tel-icon.png"
+              alt="Teléfono"
+              width={30}
+              height={30}
+              className="rounded-full ml-4 hover:scale-110"
+            />
+          </a>
+          <a href="mailto:gonzalez.campana@gmail.com">
+            <Image
+              src="/gmail-icon.png"
+              alt="Gmail"
+              width={30}
+              height={30}
+              className="rounded-full ml-4 hover:scale-110"
+            />
+          </a>
+          <a href="https://wa.me/5491165681418">
+            <Image
+              src="/wp-logo.png"
+              alt="Whatsapp"
+              width={30}
+              height={30}
+              className="rounded-full ml-4 hover:scale-110"
+            />
+          </a>
+        </Grid>
+      </Grid.Container>
     </footer>
   );
 }

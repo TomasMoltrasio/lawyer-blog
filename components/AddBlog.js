@@ -32,7 +32,7 @@ export default function AddBlog({ closeHandler }) {
   };
 
   return (
-    <Container className="flex flex-col items-center justify-center h-max w-full bg-lime-300/50 p-8 border-2 border-slate-900 rounded-xl">
+    <Container className="flex flex-col items-center justify-center h-max w-full bg-emerald-900/50 p-8 border-2 border-slate-900 rounded-xl">
       <h1 className="text-4xl font-bold text-gray-900 mb-4">Agregar Blog</h1>
       <div className="flex flex-col items-center justify-center w-full h-max p-12">
         <form className="flex flex-col items-center justify-center h-max w-full max-w-md p-6 space-y-4 rounded-md">

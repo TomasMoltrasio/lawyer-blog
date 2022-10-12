@@ -15,8 +15,8 @@ export default function CardHome() {
             />
           </div>
         </div>
-        <div className="flex flex-col items-end justify-center w-1/2">
-          <h1 className="mt-4 text-3xl font-bold text-end font-anton text-white md:text-5xl">
+        <div className="flex flex-col items-end justify-center w-1/2 md:w-3/4 lg:w-3/4 xl:w-3/4">
+          <h1 className="mt-4 text-3xl font-bold text-end font-anton text-white md:text-7xl lg:text-7xl xl:text-7xl">
             Germán González Campaña
           </h1>
           <p className="text-base text-end font-semibold mt-2 text-slate-300 md:text-3xl">
