@@ -16,7 +16,7 @@ export default function PostContainer({ posts }) {
       <Text
         h2
         size={30}
-        className={"text-center text-6xl font-bold text-gray-800"}
+        className={"text-center text-6xl mt-2 font-bold text-gray-800"}
         showIn="sm"
       >
         Publicaciones
@@ -26,7 +26,7 @@ export default function PostContainer({ posts }) {
         className=" 
         text-center
         text-xl
-        font-semibold
+        font-normal
         text-gray-900
         mb-4
         mt-4
@@ -34,11 +34,17 @@ export default function PostContainer({ posts }) {
       "
       >
         Aquí encontrará una serie de artículos propios y en coautoría,
-        publicados en los últimos años en la revista jurídica La Ley.
+        publicados en revistas especializadas.
       </Text>
       <Grid.Container gap={2} justify="center">
         {currentPosts.map((post) => (
-          <Grid xs={12} sm={6} md={4} lg={3} key={post.number}>
+          <Grid
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            key={`current-post-${post.number}`}
+          >
             <CardPost post={post} />
           </Grid>
         ))}

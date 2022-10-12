@@ -27,7 +27,7 @@ export default function CardPost({ post }) {
         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
           <Col>
             <Text
-              className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl font-semibold text-white"
+              className="text-lg sm:text-xl md:text-xl lg:text-xl xl:text-xl font-semibold text-white"
               transform="uppercase"
             >
               {title}

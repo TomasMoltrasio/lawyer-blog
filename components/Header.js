@@ -83,7 +83,7 @@ export default function Header() {
       <Navbar.Collapse>
         {collapseItems.map((item, index) => (
           <Navbar.CollapseItem
-            key={item}
+            key={`item-collapse-${index}`}
             activeColor="success"
             isActive={router.pathname === collapseItemsLinks[index]}
           >

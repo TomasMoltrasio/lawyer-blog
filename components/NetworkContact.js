@@ -16,7 +16,7 @@ export default function NetworkContact() {
           </User.Link>
         </User>
       </div>
-      <div className="bg-slate-400 p-4 w-full flex">
+      <div className="bg-cyan-900/50 p-4 w-full flex">
         <User src="gmail-icon.png" squared zoomed size="xl" bordered>
           <Text size={20} className="text-center font-semibold" h2>
             gonzalez.campana@gmail.com
@@ -43,7 +43,7 @@ export default function NetworkContact() {
           </User.Link>
         </User>
       </div>
-      <div className="bg-slate-400 p-4">
+      <div className="bg-cyan-900/50 p-4">
         <User src="wp-logo.png" squared zoomed size="xl" bordered>
           <Text size={20} className="text-center font-semibold" h2>
             (011) 15 6568 1418

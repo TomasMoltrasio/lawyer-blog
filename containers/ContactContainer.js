@@ -8,7 +8,7 @@ export default function ContactContainer() {
       <Text
         h2
         size={30}
-        className={"text-center text-6xl font-bold text-gray-800"}
+        className={"text-center text-6xl mt-2 font-bold text-gray-800"}
         showIn="sm"
       >
         Contacto
@@ -17,7 +17,7 @@ export default function ContactContainer() {
         className="
             text-center
         text-xl
-        font-bold
+        font-normal
         text-gray-900
         mb-4
         mt-4

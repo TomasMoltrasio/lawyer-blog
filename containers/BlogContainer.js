@@ -58,7 +58,7 @@ export default function BlogContainer({ posts }) {
         className="
             text-center
         text-xl
-        font-bold
+        font-normal
         text-gray-900
         mb-4
         mt-4
@@ -115,7 +115,7 @@ export default function BlogContainer({ posts }) {
             {postSearch.length > 0 ? (
               postSearch.map((post) => (
                 <Grid xs={12} md={6} lg={6} className="w-full">
-                  <CardBlog key={post.id} post={post} />)
+                  <CardBlog key={`card-blog-${post.id}`} post={post} />)
                 </Grid>
               ))
             ) : (
@@ -130,7 +130,7 @@ export default function BlogContainer({ posts }) {
           <>
             {currentPosts.map((post) => (
               <Grid xs={12} md={6} lg={6} className="w-full">
-                <CardBlog key={post.id} post={post} />
+                <CardBlog key={`current-blog-${post.id}`} post={post} />
               </Grid>
             ))}
           </>
