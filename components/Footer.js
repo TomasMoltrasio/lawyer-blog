@@ -21,7 +21,13 @@ export default function Footer() {
             </a>
           </span>
         </Grid>
-        <Grid xs={4} md={4} lg={4} className="w-full" justify="flex-end">
+        <Grid
+          xs={4}
+          md={4}
+          lg={4}
+          className="w-full flex-wrap"
+          justify="flex-end"
+        >
           <a href="https://www.linkedin.com/in/germ%C3%A1n-gonz%C3%A1lez-campa%C3%B1a-4b1b3b1b9/">
             <Image
               src="/in-logo.png"

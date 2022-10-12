@@ -26,7 +26,10 @@ export default function CardPost({ post }) {
       <Card css={{ w: "100%", h: "300px" }}>
         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
           <Col>
-            <Text size={20} weight="bold" transform="uppercase" color="white">
+            <Text
+              className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl font-semibold text-white"
+              transform="uppercase"
+            >
               {title}
             </Text>
             <Text h3 color="white">
@@ -60,8 +63,8 @@ export default function CardPost({ post }) {
                 <Button auto rounded color="success" onClick={toPost}>
                   <Text
                     css={{ color: "inherit" }}
-                    size={12}
-                    weight="bold"
+                    size={16}
+                    weight="semibold"
                     transform="uppercase"
                   >
                     Ver más

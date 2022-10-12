@@ -26,7 +26,7 @@ export default function PostContainer({ posts }) {
         className=" 
         text-center
         text-xl
-        font-bold
+        font-semibold
         text-gray-900
         mb-4
         mt-4
@@ -38,7 +38,7 @@ export default function PostContainer({ posts }) {
       </Text>
       <Grid.Container gap={2} justify="center">
         {currentPosts.map((post) => (
-          <Grid xs={6} sm={6} md={4} lg={3} key={post.number}>
+          <Grid xs={12} sm={6} md={4} lg={3} key={post.number}>
             <CardPost post={post} />
           </Grid>
         ))}

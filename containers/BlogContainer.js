@@ -12,6 +12,7 @@ import { useState } from "react";
 import { getPostByTitle } from "services/post";
 import Link from "next/link";
 import { SearchIcon } from "public/SearchIcon";
+import { IoAddCircleOutline } from "react-icons/io5";
 
 export default function BlogContainer({ posts }) {
   const [visible, setVisible] = useState(false);
@@ -31,12 +32,16 @@ export default function BlogContainer({ posts }) {
   };
 
   const handleSearch = (e) => {
-    e.preventDefault();
-    const titulo = e.target.value;
-    setTitle(e.target.value);
-    getPostByTitle(titulo).then((res) => {
-      setPostSearch(res);
-    });
+    if (e.target.value === "") {
+      setTitle("");
+    } else {
+      e.preventDefault();
+      const titulo = e.target.value;
+      setTitle(e.target.value);
+      getPostByTitle(titulo).then((res) => {
+        setPostSearch(res);
+      });
+    }
   };
 
   return (
@@ -63,7 +68,7 @@ export default function BlogContainer({ posts }) {
         conocimiento y experiencias.
       </Text>
       <Grid.Container gap={2} justify="space-between" className="w-full">
-        <Grid xs={6} md={6} lg={4} className="w-full">
+        <Grid xs={6} md={6} lg={4} justify="center" className="w-full">
           <Button
             className="relative z-10 w-1/2 max-w-md hover:scale-105"
             color="success"
@@ -72,7 +77,8 @@ export default function BlogContainer({ posts }) {
             bordered
             onClick={() => setVisible(true)}
           >
-            Escribir un nuevo blog
+            <IoAddCircleOutline size={25} className="mr-2" />
+            Nuevo blog
           </Button>
           <Modal open={visible} onClose={closeHandler} closeButton blur>
             <AddBlog closeHandler={closeHandler} />
@@ -113,9 +119,11 @@ export default function BlogContainer({ posts }) {
                 </Grid>
               ))
             ) : (
-              <p className="text-gray-900 text-xl font-bold">
-                No se encontraron resultados
-              </p>
+              <Grid xs={12} md={12} lg={12} className="w-full" justify="center">
+                <Text className="text-center text-xl font-semibold text-gray-900">
+                  No se encontraron resultados, intenta con otro título.
+                </Text>
+              </Grid>
             )}
           </>
         ) : (

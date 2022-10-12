@@ -9,7 +9,7 @@ export default function LatestPost({ posts }) {
           <Text h3 size={20} weight="bold">
             Últimas publicaciónes
           </Text>
-          <Container css={{ mt: 16 }}>
+          <Container className="flex flex-col w-full">
             <CardLatestPost posts={posts[0]} />
             <CardLatestPost posts={posts[1]} />
             <CardLatestPost posts={posts[2]} />
