@@ -22,7 +22,7 @@ export async function getStaticPaths() {
     params: { id: post._id?.toString() },
   }));
 
-  return { paths, fallback: blocking };
+  return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
