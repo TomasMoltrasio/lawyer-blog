@@ -1,15 +1,9 @@
 import endPoints from "./index";
 
-const cache = {};
-
 const getAllPost = async () => {
-  if (cache.posts && cache.posts.length > 0) {
-    return cache.posts;
-  }
   try {
     const res = await fetch(endPoints.posts.getAllPost());
     const data = await res.json();
-    cache.posts = data;
 
     return data;
   } catch (error) {
@@ -18,10 +12,6 @@ const getAllPost = async () => {
 };
 
 const getPost = async (id) => {
-  if (cache.posts && cache.posts.length > 0) {
-    return cache.posts.find((post) => post.id === id);
-  }
-
   try {
     const res = await fetch(endPoints.posts.getPost(id));
     const data = await res.json();
@@ -33,9 +23,6 @@ const getPost = async (id) => {
 };
 
 const getPostByTitle = async (title) => {
-  if (cache.posts && cache.posts.length > 0) {
-    return cache.posts.find((post) => post.title === title);
-  }
   try {
     const res = await fetch(endPoints.posts.getPostByTitle(title));
     const data = await res.json();
@@ -56,7 +43,6 @@ const createPost = async (post) => {
       body: JSON.stringify(post),
     });
     const data = await res.json();
-    cache.posts = null;
 
     return data;
   } catch (error) {
@@ -74,7 +60,6 @@ const updatePost = async (id, post) => {
       body: JSON.stringify(post),
     });
     const data = await res.json();
-    cache.posts = null;
 
     return data;
   } catch (error) {
@@ -88,7 +73,6 @@ const deletePost = async (id) => {
       method: "DELETE",
     });
     const data = await res.json();
-    cache.posts = null;
 
     return data;
   } catch (error) {
