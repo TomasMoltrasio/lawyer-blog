@@ -12,7 +12,6 @@ export const sendEmail = async (templateParams) => {
       templateParams,
       PUBLIC_KEY.toString()
     );
-    console.log(res);
   } catch (error) {
     console.log(error);
   }

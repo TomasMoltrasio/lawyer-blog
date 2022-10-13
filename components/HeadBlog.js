@@ -3,9 +3,10 @@ import { Grid, Text, Col, Row, Button } from "@nextui-org/react";
 import { deletePost } from "services/post";
 import Sweet from "sweetalert2";
 import { useRouter } from "next/router";
+import { MdDelete } from "react-icons/md";
 
 export default function HeadBlog({ post }) {
-  const { title, id } = post;
+  const { title, _id } = post;
   const router = useRouter();
   const postDelete = "Post deleted";
 
@@ -21,7 +22,7 @@ export default function HeadBlog({ post }) {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await deletePost(id).then((res) => res);
+        await deletePost(_id).then((res) => res);
         Sweet.fire("Eliminado", postDelete, "success");
         router.push("/blog");
       }
@@ -34,7 +35,7 @@ export default function HeadBlog({ post }) {
         <title>{title}</title>
       </Head>
       <Grid.Container
-        className="bg-lime-500/50 p-4 rounded-lg shadow-lg border-b-2 border-b-black mt-0"
+        className="bg-emerald-900/50 p-4 rounded-lg shadow-lg border-b-2 border-b-black mt-0"
         gap={2}
         justify="space-around"
       >
@@ -47,7 +48,7 @@ export default function HeadBlog({ post }) {
             {title}
           </Text>
         </Grid>
-        <Grid xs={1} justify="flex-end" alignItems="center">
+        <Grid justify="flex-end" alignItems="flex-end">
           <Button
             className="relative z-10 w-1/2 max-w-md hover:scale-110 transform transition duration-500 ease-in-out"
             color="error"
@@ -56,7 +57,7 @@ export default function HeadBlog({ post }) {
             bordered
             onClick={handleDelete}
           >
-            Eliminar blog
+            <MdDelete size={20} />
           </Button>
         </Grid>
       </Grid.Container>

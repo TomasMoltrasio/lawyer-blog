@@ -19,7 +19,7 @@ export default function BlogWithId({ post }) {
 export async function getStaticPaths() {
   const posts = await getAllPost().then((res) => res);
   const paths = posts.map((post) => ({
-    params: { id: post.id.toString() },
+    params: { id: post._id.toString() },
   }));
 
   return { paths, fallback: false };

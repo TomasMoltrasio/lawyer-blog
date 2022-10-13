@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import NextLink from "next/link";
 
 export default function CardBlog({ post }) {
-  const { title, description, id, date } = post;
+  const { title, description, _id, updatedAt } = post;
   const images = [
     "images-fondo/libro-2.jpg",
     "images-fondo/libro-3.jpg",
@@ -17,12 +17,8 @@ export default function CardBlog({ post }) {
   ];
   const router = useRouter();
 
-  const toBlog = () => {
-    router.push(`/blog/${id}`);
-  };
-
   return (
-    <NextLink href={`/blog/${id}`}>
+    <NextLink href={`/blog/${_id}`}>
       <div className="cursor-pointer hover:-translate-y-1 hover:scale-105 transition-all duration-300 w-full md:w-11/12 lg:w-11/12 xl:w-11/12 2xl:w-11/12">
         <Card className="h-52 md:mx-10 lg:mx-10 xl:mx-10">
           <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
@@ -66,7 +62,7 @@ export default function CardBlog({ post }) {
                 <Row>
                   <Col>
                     <Text color="#d1d1d1" size={20} className="font-bold">
-                      {date.split("T")[0].split("-").reverse().join("/")}
+                      {updatedAt.split("T")[0].split("-").reverse().join("/")}
                     </Text>
                   </Col>
                 </Row>
@@ -80,7 +76,7 @@ export default function CardBlog({ post }) {
                       weight="bold"
                       transform="uppercase"
                     >
-                      <NextLink href={`/blog/${id}`}>Ir al Post</NextLink>
+                      <NextLink href={`/blog/${_id}`}>Ir al Post</NextLink>
                     </Text>
                   </Button>
                 </Row>
