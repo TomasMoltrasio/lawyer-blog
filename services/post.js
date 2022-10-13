@@ -3,7 +3,7 @@ import endPoints from "./index";
 const cache = {};
 
 const getAllPost = async () => {
-  if (cache.posts) {
+  if (cache.posts && cache.posts.length > 0) {
     return cache.posts;
   }
   try {
@@ -18,7 +18,7 @@ const getAllPost = async () => {
 };
 
 const getPost = async (id) => {
-  if (cache.posts) {
+  if (cache.posts && cache.posts.length > 0) {
     return cache.posts.find((post) => post.id === id);
   }
 
@@ -33,7 +33,7 @@ const getPost = async (id) => {
 };
 
 const getPostByTitle = async (title) => {
-  if (cache.posts) {
+  if (cache.posts && cache.posts.length > 0) {
     return cache.posts.find((post) => post.title === title);
   }
   try {
