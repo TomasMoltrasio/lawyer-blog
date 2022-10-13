@@ -3,7 +3,6 @@ import { Navbar, Text, Link } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { GoLaw } from "react-icons/go";
 import { AiOutlineMenu } from "react-icons/ai";
-import { useState } from "react";
 import NextLink from "next/link";
 
 export default function Header() {
