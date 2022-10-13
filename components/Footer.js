@@ -28,7 +28,10 @@ export default function Footer() {
           className="w-full flex-wrap"
           justify="flex-end"
         >
-          <a href="https://www.linkedin.com/in/germ%C3%A1n-gonz%C3%A1lez-campa%C3%B1a-4b1b3b1b9/">
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/germ%C3%A1n-gonz%C3%A1lez-campa%C3%B1a-4b1b3b1b9/"
+          >
             <Image
               src="/in-logo.png"
               alt="Linkedin"
@@ -37,7 +40,7 @@ export default function Footer() {
               className="rounded-full ml-4 hover:scale-110"
             />
           </a>
-          <a href="tel:+5491165681418">
+          <a target="_blank" href="tel:+5491165681418">
             <Image
               src="/tel-icon.png"
               alt="Teléfono"
@@ -46,7 +49,7 @@ export default function Footer() {
               className="rounded-full ml-4 hover:scale-110"
             />
           </a>
-          <a href="mailto:gonzalez.campana@gmail.com">
+          <a target="_blank" href="mailto:gonzalez.campana@gmail.com">
             <Image
               src="/gmail-icon.png"
               alt="Gmail"
@@ -55,7 +58,7 @@ export default function Footer() {
               className="rounded-full ml-4 hover:scale-110"
             />
           </a>
-          <a href="https://wa.me/5491165681418">
+          <a target="_blank" href="https://wa.me/5491165681418">
             <Image
               src="/wp-logo.png"
               alt="Whatsapp"
