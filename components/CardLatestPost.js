@@ -37,6 +37,7 @@ export default function CardLatestPost({ posts }) {
               objectFit="cover"
               alt="Imagen de libros"
               className="brightness-50"
+              loading="lazy"
             />
           </Card.Body>
           <Card.Footer

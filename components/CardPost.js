@@ -1,8 +1,6 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
-import { useRouter } from "next/router";
 
 export default function CardPost({ post }) {
-  const router = useRouter();
   const images = [
     "images-fondo/libro-2.jpg",
     "images-fondo/libro-3.jpg",
@@ -45,6 +43,7 @@ export default function CardPost({ post }) {
             objectFit="cover"
             alt="Card example background"
             className="brightness-50"
+            loading="lazy"
           />
         </Card.Body>
         <Card.Footer

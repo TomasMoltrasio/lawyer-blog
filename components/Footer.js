@@ -38,6 +38,7 @@ export default function Footer() {
               width={30}
               height={30}
               className="rounded-full ml-4 hover:scale-110"
+              loading="lazy"
             />
           </a>
           <a target="_blank" href="tel:+5491165681418">
@@ -47,6 +48,7 @@ export default function Footer() {
               width={30}
               height={30}
               className="rounded-full ml-4 hover:scale-110"
+              loading="lazy"
             />
           </a>
           <a target="_blank" href="mailto:gonzalez.campana@gmail.com">
@@ -56,6 +58,7 @@ export default function Footer() {
               width={30}
               height={30}
               className="rounded-full ml-4 hover:scale-110"
+              loading="lazy"
             />
           </a>
           <a target="_blank" href="https://wa.me/5491165681418">
@@ -65,6 +68,7 @@ export default function Footer() {
               width={30}
               height={30}
               className="rounded-full ml-4 hover:scale-110"
+              loading="lazy"
             />
           </a>
         </Grid>

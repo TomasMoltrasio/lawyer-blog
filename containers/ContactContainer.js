@@ -21,6 +21,7 @@ export default function ContactContainer() {
         text-gray-900
         mb-4
         mt-4
+        sm:px-6
           "
       >
         Si tienes alguna duda o quieres contactarnos, puedes hacerlo a través de

@@ -62,6 +62,7 @@ export default function BlogContainer({ posts }) {
         text-gray-900
         mb-4
         mt-4
+        sm:px-6
           "
       >
         Aquí encontraras los últimos articulos de mi blog, dónde comparto

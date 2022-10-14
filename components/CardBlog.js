@@ -45,6 +45,7 @@ export default function CardBlog({ post }) {
               height="100%"
               alt="imagen de libros"
               className="brightness-50"
+              loading="lazy"
             />
           </Card.Body>
           <Card.Footer

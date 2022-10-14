@@ -12,6 +12,7 @@ export default function CardHome() {
               layout="fill"
               objectFit="cover"
               className="rounded-full"
+              loading="lazy"
             />
           </div>
         </div>

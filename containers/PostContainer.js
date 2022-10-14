@@ -30,7 +30,7 @@ export default function PostContainer({ posts }) {
         text-gray-900
         mb-4
         mt-4
-        
+        sm:px-6
       "
       >
         Aquí encontrará una serie de artículos propios y en coautoría,
