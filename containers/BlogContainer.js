@@ -10,7 +10,6 @@ import {
 import AddBlog from "components/AddBlog";
 import { useState } from "react";
 import { getPostByTitle } from "services/post";
-import Link from "next/link";
 import { SearchIcon } from "public/SearchIcon";
 import { IoAddCircleOutline } from "react-icons/io5";
 
@@ -19,10 +18,10 @@ export default function BlogContainer({ posts }) {
   const [post, setPost] = useState(posts);
   const [title, setTitle] = useState("");
   const [postSearch, setPostSearch] = useState([]);
+  const [postsPerPage, setPostsPerPage] = useState(4);
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const postsPerPage = 4;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = post.slice(indexOfFirstPost, indexOfLastPost);
@@ -139,7 +138,7 @@ export default function BlogContainer({ posts }) {
       </Grid.Container>
       <Pagination
         color={"success"}
-        total={Math.ceil(post.length / postsPerPage)}
+        total={title.length > 0 ? 1 : Math.ceil(post.length / postsPerPage)}
         initialPage={1}
         onChange={(page) => setCurrentPage(page)}
       />
