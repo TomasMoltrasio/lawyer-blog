@@ -10,6 +10,9 @@ const endPoints = {
     updatePost: (id) => `${API_URL}/${API_VERSION}/post/${id}`,
     deletePost: (id) => `${API_URL}/${API_VERSION}/post/${id}`,
   },
+  users: {
+    login: () => `${API_URL}/${API_VERSION}/user/login`,
+  },
 };
 
 export default endPoints;

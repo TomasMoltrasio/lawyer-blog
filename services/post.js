@@ -1,4 +1,8 @@
 import endPoints from "./index";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
+const user = cookies.get("user");
 
 const getAllPost = async () => {
   try {
@@ -39,6 +43,7 @@ const createPost = async (post) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user?.token}`,
       },
       body: JSON.stringify(post),
     });
@@ -56,6 +61,7 @@ const updatePost = async (id, post) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user?.token}`,
       },
       body: JSON.stringify(post),
     });
@@ -71,6 +77,10 @@ const deletePost = async (id) => {
   try {
     const res = await fetch(endPoints.posts.deletePost(id), {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user?.token}`,
+      },
     });
     const data = await res.json();
 

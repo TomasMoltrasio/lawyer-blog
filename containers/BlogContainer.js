@@ -12,6 +12,7 @@ import { useState } from "react";
 import { getPostByTitle } from "services/post";
 import { SearchIcon } from "public/SearchIcon";
 import { IoAddCircleOutline } from "react-icons/io5";
+import Cookies from "universal-cookie";
 
 export default function BlogContainer({ posts }) {
   const [visible, setVisible] = useState(false);
@@ -19,6 +20,8 @@ export default function BlogContainer({ posts }) {
   const [title, setTitle] = useState("");
   const [postSearch, setPostSearch] = useState([]);
   const [postsPerPage, setPostsPerPage] = useState(4);
+  const cookies = new Cookies();
+  const user = cookies.get("user");
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -69,17 +72,19 @@ export default function BlogContainer({ posts }) {
       </Text>
       <Grid.Container gap={2} justify="space-between" className="w-full">
         <Grid xs={6} md={6} lg={4} justify="center" className="w-full">
-          <Button
-            className="relative z-10 w-1/2 max-w-md hover:scale-105"
-            color="success"
-            flat
-            auto
-            bordered
-            onClick={() => setVisible(true)}
-          >
-            <IoAddCircleOutline size={25} className="mr-2" />
-            Nuevo blog
-          </Button>
+          {user?.token ? (
+            <Button
+              className="relative z-10 w-1/2 max-w-md hover:scale-105"
+              color="success"
+              flat
+              auto
+              bordered
+              onClick={() => setVisible(true)}
+            >
+              <IoAddCircleOutline size={25} className="mr-2" />
+              Nuevo blog
+            </Button>
+          ) : null}
           <Modal open={visible} onClose={closeHandler} closeButton blur>
             <AddBlog closeHandler={closeHandler} />
           </Modal>

@@ -13,9 +13,10 @@ export default function Home({ posts }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const posts = await getAllPost().then((res) => res);
-  const latestPost = posts.reverse().slice(0, 3);
+  const latestPost = posts?.reverse().slice(0, 3) || [];
+
   return {
     props: {
       posts: latestPost || [],

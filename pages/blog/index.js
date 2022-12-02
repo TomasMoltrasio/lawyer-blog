@@ -14,11 +14,12 @@ export default function Blog({ posts }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await getAllPost().then((res) => res);
   if (res === undefined) {
     res = [];
   }
+
   const data = res.reverse();
 
   return {

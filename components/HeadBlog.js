@@ -4,11 +4,14 @@ import { deletePost } from "services/post";
 import Sweet from "sweetalert2";
 import { useRouter } from "next/router";
 import { MdDelete } from "react-icons/md";
+import Cookies from "universal-cookie";
 
 export default function HeadBlog({ post }) {
   const { title, _id } = post;
   const router = useRouter();
   const postDelete = "Post deleted";
+  const cookies = new Cookies();
+  const user = cookies.get("user");
 
   const handleDelete = () => {
     Sweet.fire({
@@ -48,18 +51,20 @@ export default function HeadBlog({ post }) {
             {title}
           </Text>
         </Grid>
-        <Grid justify="flex-end" alignItems="flex-end">
-          <Button
-            className="relative z-10 w-1/2 max-w-md hover:scale-110 transform transition duration-500 ease-in-out"
-            color="error"
-            flat
-            auto
-            bordered
-            onClick={handleDelete}
-          >
-            <MdDelete size={20} />
-          </Button>
-        </Grid>
+        {user?.token ? (
+          <Grid justify="flex-end" alignItems="flex-end">
+            <Button
+              className="relative z-10 w-1/2 max-w-md hover:scale-110 transform transition duration-500 ease-in-out"
+              color="error"
+              flat
+              auto
+              bordered
+              onClick={handleDelete}
+            >
+              <MdDelete size={20} />
+            </Button>
+          </Grid>
+        ) : null}
       </Grid.Container>
     </>
   );

@@ -1,11 +1,17 @@
-import React from "react";
+import { useContext } from "react";
 import { Navbar, Text, Link } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { GoLaw } from "react-icons/go";
 import { AiOutlineMenu } from "react-icons/ai";
 import NextLink from "next/link";
+import Cookies from "universal-cookie";
+import UserContext from "context/AuthContext";
+import { FiLogOut } from "react-icons/fi";
 
 export default function Header() {
+  const { logOut } = useContext(UserContext);
+  const cookies = new Cookies();
+  const user = cookies.get("user");
   const collapseItems = ["Inicio", "Publicaciones", "Blog", "Contacto"];
   const collapseItemsLinks = ["/", "/publicaciones", "/blog", "/contacto"];
 
@@ -78,6 +84,14 @@ export default function Header() {
             Contacto
           </Navbar.Link>
         </NextLink>
+        {user?.token ? (
+          <Navbar.Link
+            onClick={logOut}
+            className="hover:scale-110 cursor-pointer text-red-500"
+          >
+            <FiLogOut className="mr-2" />
+          </Navbar.Link>
+        ) : null}
       </Navbar.Content>
       <Navbar.Collapse>
         {collapseItems.map((item, index) => (
@@ -101,6 +115,22 @@ export default function Header() {
             </NextLink>
           </Navbar.CollapseItem>
         ))}
+        {user?.token ? (
+          <Navbar.CollapseItem activeColor="success">
+            <Link
+              color="error"
+              css={{
+                minWidth: "100%",
+              }}
+              onClick={() => {
+                document.getElementById("navbar-toggle").click();
+                logOut();
+              }}
+            >
+              <FiLogOut className="mr-2" />
+            </Link>
+          </Navbar.CollapseItem>
+        ) : null}
       </Navbar.Collapse>
     </Navbar>
   );

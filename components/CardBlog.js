@@ -15,7 +15,6 @@ export default function CardBlog({ post }) {
     "images-fondo/libro-9.jpg",
     "images-fondo/libros.jpg",
   ];
-  const router = useRouter();
 
   return (
     <NextLink href={`/blog/${_id}`}>
