@@ -2,7 +2,7 @@ import { Image, Grid } from "@nextui-org/react";
 
 export default function Footer() {
   return (
-    <footer className="bg-emerald-900/50 h-max w-full mt-10 shadow md:flex md:items-center md:justify-between">
+    <footer className="bg-emerald-900/50 bottom-0 h-max w-full mt-10 shadow md:flex md:items-center md:justify-between">
       <Grid.Container justify="space-between" className="w-full p-2 px-6">
         <Grid xs={4} md={4} lg={4} className="w-full">
           <span className="text-xs font-semibold text-black md:text-sm lg:text-sm xl:text-sm">

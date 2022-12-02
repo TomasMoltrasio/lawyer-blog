@@ -21,5 +21,6 @@ export async function getStaticProps(context) {
     props: {
       posts: latestPost || [],
     },
+    revalidate: 60 * 10,
   };
 }

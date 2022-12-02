@@ -5,7 +5,15 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen w-screen">
       <Header />
-      <main className="flex flex-col h-max w-full">{children}</main>
+      <main
+        className="flex flex-col min-h-max h-max w-full"
+        style={{
+          height: "max-content",
+          overflow: "auto",
+        }}
+      >
+        {children}
+      </main>
       <Footer />
     </div>
   );

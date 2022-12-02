@@ -45,8 +45,10 @@ export default function HeadBlog({ post }) {
         <Grid xs={12} md={8} justify="center">
           <Text
             h2
-            size={40}
-            className={"text-center text-6xl font-bold text-gray-800"}
+            size={24}
+            className={
+              "text-center text-2xl md:text-4xl font-bold text-gray-800"
+            }
           >
             {title}
           </Text>

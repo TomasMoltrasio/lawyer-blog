@@ -2,7 +2,7 @@ import { Container, Row, Col, Text } from "@nextui-org/react";
 
 export default function BodyBlog({ post }) {
   return (
-    <Container justify="flex-start" className="pt-8">
+    <Container justify="flex-start" className="pt-8" fluid>
       <Row>
         <Col>
           <Text

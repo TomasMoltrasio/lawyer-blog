@@ -23,15 +23,14 @@ export default function CardBlog({ post }) {
           <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
             <Col>
               <Text
-                size={20}
                 weight="bold"
                 transform="uppercase"
                 color="white"
-                className="text-3xl"
+                className="text-base"
               >
                 {title}
               </Text>
-              <Text h3 color="white" className="text-xl mt-8">
+              <Text h3 color="white" className="text-sm mt-2">
                 {description}
               </Text>
             </Col>
